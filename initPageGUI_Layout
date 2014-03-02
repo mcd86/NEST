@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp" >
+
+<!-- /**************** CLASS PROMPT *****************/ -->
+       <EditText
+        android:id="@+id/classEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/classTextView"
+        android:ems="10"
+        android:maxLength="20"
+        android:textSize="15sp"
+        android:hint="@string/classnameHint"
+        android:inputType="text"
+        android:typeface="serif"
+        android:background="@drawable/boarders" 
+        android:paddingLeft="110dp">
+        <requestFocus />
+    </EditText>
+    
+    <TextView
+        android:id="@+id/classTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/classEditText"
+        android:layout_alignBottom="@+id/classEditText"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:text="@string/classPrompt"
+        android:typeface="serif"
+        android:textSize="20sp" />
+    
+<!-- /**************** BUILDING PROMPT *****************/   -->
+
+	<Spinner 
+	    android:id="@+id/buildingSpinner"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/classEditText"
+	    android:paddingLeft="110dp"
+	    android:background="@drawable/boarders" />  
+
+    
+    <TextView
+        android:id="@+id/buildingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buildingSpinner"
+        android:layout_alignBottom="@+id/buildingSpinner"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:text="@string/buildingPrompt"
+        android:typeface="serif"
+        android:textSize="20sp" />
+    
+<!--  /**************** DAY(S) OF WEEK PROMPT *****************/  -->      
+        <TextView
+        	android:id="@+id/dayTextView"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_below="@+id/buildingSpinner"
+        	android:paddingLeft="10dp"
+        	android:text="@string/dayPrompt1"
+        	android:textSize="20sp"
+        	android:typeface="serif" />
+        
+            
+        	<CheckBox
+                android:id="@+id/monCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:layout_below="@+id/dayTextView"
+				android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/monday"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/tuesCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:layout_below="@+id/monCheckBox"
+                android:text="@string/tuesday"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/wedsCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tuesCheckBox"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/wednesday"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/thursCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wedsCheckBox"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/thursday"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/friCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thursCheckBox"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/friday" 
+                android:typeface="serif"/>
+            
+<!-- /**************** UNDER CONSTRUCTION *****************/  -->           
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:text="@string/select_country"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/friCheckBox"
+        android:text="@string/business_type"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+
+
+    <Spinner
+        android:id="@+id/spBussinessType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:prompt="@string/business_prompt" />
+
+    <Spinner
+        android:id="@+id/spCountries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spBussinessType"
+        android:layout_alignParentLeft="true"
+        android:entries="@array/country_arrays"
+        android:prompt="@string/country_prompt" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spCountries"
+        android:layout_alignParentLeft="true"
+        android:text="@string/spinner_demo"
+        android:textSize="20sp" />
+
+</RelativeLayout>
