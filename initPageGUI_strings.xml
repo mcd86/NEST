@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ToastListViewExample4</string>
+    <string name="business_prompt">Choose a business type</string>
+    <string name="country_prompt">Choose a country</string>
+    <string name="spinner_demo">This is the demo</string>
+    <string name="select_country">Select a country</string>
+    <string name="business_type">Choose a business type</string>
+    <string-array name="country_arrays">
+        <item>India</item>
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+    </string-array>
+    
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="classPrompt">Class:</string>
+    <string name="classnameHint">class name</string>
+    <string name="dayPrompt">Select days of the week:</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="dayPrompt1">Day(s):</string>
+    <string name="buildingHint">building name</string>
+    <string name="buildingPrompt">Building: </string>
+    <string-array name="buildingNames">
+        <item>building name</item><item >University Crossings</item>
+        <item >Korman</item>
+        <item >Lebow</item>
+        <item >Alumni Engineering Labs</item>
+        <item >Armory (Buckley Courts)</item>
+        <item >Bossone Research Enterprise Center</item>
+        <item >School of Biomedical Engineering, Science and Health Systems</item>
+        <item >Center for Automation Technology</item>
+        <item >Creese Student Center</item>
+        <item >Curtis Hall</item>
+        <item >Daskalakis Athletic Center</item>
+        <item >Disque Hall</item>
+        <item >Korman Center School of Education</item>
+        <item >Law Building and Library</item>
+        <item >LeBow Engineering Center</item>
+        <item >Lebow College of Business</item>
+        <item >MacAlister Hall</item>
+        <item >Marks Intercultural Center</item>
+        <item >School of Public Health</item>
+        <item >One Drexel Plaza</item>
+        
+    </string-array>
+
+</resources>
