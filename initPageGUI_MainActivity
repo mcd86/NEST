@@ -1,30 +1,39 @@
 package com.example.toastlistviewexample4;
 
 
-import android.os.Bundle;
+import java.util.Calendar;
+
 import android.app.Activity;
+import android.app.Dialog;
+import android.view.View.OnClickListener;
+import android.app.TimePickerDialog;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Spinner;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	// Widgets - GUI
-    Spinner spCountries;
-    Spinner spBusinessType;
     Spinner spBuildingName;
+    private TextView tvStartOut;
+    public Button btnChStart;
+    private TextView tvEndOut;
+    public Button btnChEnd;
+    
+    private int hour;
+    private int minute;
+    static final int TIME_DIALOG_ID = 1111;
        
-    // Data Source
-    String businessType[] = { "Automobile", "Food", "Computers", "Education",
-            "Personal", "Travel" };
- 
+
     // Adapter
-    ArrayAdapter<String> adapterBusinessType;
     ArrayAdapter<String> adptBuildingName;
  
     /** Called when the activity is first created. */
@@ -36,14 +45,11 @@ public class MainActivity extends Activity {
         // set adapter
         String[] buildingNames = getResources().getStringArray(R.array.buildingNames);
         
-        // Initialize Spinners
+        // Initialize Widgets
        spBuildingName = (Spinner) findViewById(R.id.buildingSpinner);
-       spCountries = (Spinner) findViewById(R.id.spCountries);
-       spBusinessType = (Spinner) findViewById(R.id.spBussinessType);
- 
-        // Initialize and set Adapter
-        adapterBusinessType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, businessType);
-        spBusinessType.setAdapter(adapterBusinessType);
+       tvStartOut = (TextView) findViewById(R.id.startOutTextView);
+       tvEndOut = (TextView) findViewById(R.id.endOutTextView);
+       
         adptBuildingName = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, buildingNames);
         spBuildingName.setAdapter(adptBuildingName);
         
@@ -63,49 +69,104 @@ public class MainActivity extends Activity {
         		// TODO Auto-generated method stub
                  }
         });
-   
         
-        // Country Item Selected Listener
-        spCountries.setOnItemSelectedListener(new OnItemSelectedListener() {
- 
-            @Override
-            public void onItemSelected(AdapterView<?> adapter, View v,
-                    int position, long id) {
-                // On selecting a spinner item
-                String item = adapter.getItemAtPosition(position).toString();
- 
-                // Showing selected spinner item
-                Toast.makeText(getApplicationContext(),
-                        "Selected Country : " + item, Toast.LENGTH_LONG).show();
-            }
- 
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
- 
-            }
-        });
-        // Business Type Item Selected Listener
-        spBusinessType.setOnItemSelectedListener(new OnItemSelectedListener() {
- 
-            @Override
-            public void onItemSelected(AdapterView<?> adapter, View v,
-                    int position, long id) {
-                // On selecting a spinner item
-                String item = adapter.getItemAtPosition(position).toString();
- 
-                // Showing selected spinner item
-                Toast.makeText(getApplicationContext(),
-                        "Bussiness Type : " + item, Toast.LENGTH_LONG).show();
-            }
- 
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
- 
-            }
-        });
+        // Display current time on screen Start
+        final Calendar c = Calendar.getInstance();
+        // Current Hour
+        hour = c.get(Calendar.HOUR_OF_DAY);
+        // Current Minute
+        minute = c.get(Calendar.MINUTE);
+        
+        // Set current time into start time text view
+        UpdateTime(hour, minute);
+        
+        // Display current time on screen end
+        
+        // Add button click listener
+        addStartButtonClickListener();
+        addEndButtonClickListener();
     }
+    
+    public void addStartButtonClickListener(){
+    	btnChStart = (Button) findViewById(R.id.chStartTimeButton);
+    	btnChStart.setOnClickListener(new OnClickListener(){
+    		
+			@SuppressWarnings("deprecation")
+			@Override
+    		public void onClick(View v){
+    			showDialog(TIME_DIALOG_ID);
+    		}
+    	});
+    }
+    public void addEndButtonClickListener(){
+        	btnChEnd = (Button) findViewById(R.id.chEndTimeButton);
+        	btnChEnd.setOnClickListener(new OnClickListener(){
+        		
+    			@SuppressWarnings("deprecation")
+    			@Override
+        		public void onClick(View v){
+        			showDialog(TIME_DIALOG_ID);
+        		}
+        	});
+    }
+    
+    @Override
+    protected Dialog onCreateDialog(int id){
+    	switch (id){
+    	case TIME_DIALOG_ID:
+    	// set time picker as current time
+    	return new TimePickerDialog(this, timePickerListener, hour, minute, false);
+    	}
+    	return null;
+    }
+    
+    private TimePickerDialog.OnTimeSetListener timePickerListener = new TimePickerDialog.OnTimeSetListener() {
+		
+		@Override
+		public void onTimeSet(TimePicker view, int hourOfDay, int minutes) {
+			// TODO Auto-generated method stub
+			hour = hourOfDay;
+			minute = minutes;
+			
+			UpdateTime(hour, minute);
+			
+		}
+	};
+	
+	private static String UtilTime(int value){
+		if(value<10)
+			return"0" + String.valueOf(value);
+		else
+			return String.valueOf(value);
+	}
+	
+	// Used to convert 24hr format to 12 hr format
+	private void UpdateTime(int hours, int mins){
+		
+		String timeSet="";
+		if (hours> 12){
+			hours -= 12;
+			timeSet = "PM";
+		}else if (hours == 0) {
+			hours += 12;
+			timeSet = "AM";
+		}else if (hours == 12){
+			timeSet="PM";
+		}else
+			timeSet="AM";
+		
+		String minutes = "";
+		if (mins<10)
+			minutes = "0" +mins;
+		else
+			minutes =String.valueOf(mins);
+		
+		// Append in a string builder
+		String aTime = new StringBuilder().append(hours).append(":").append(minutes).append(" ").append(timeSet).toString();
+		
+		tvStartOut.setText(aTime);
+		tvEndOut.setText(aTime);
+	}
 /*	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
