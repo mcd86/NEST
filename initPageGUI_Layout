@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/nestbg" >
+    android:background="@drawable/nestbackground" >
     
 <RelativeLayout 
     android:layout_width="match_parent"
