@@ -1,4 +1,5 @@
-All that I have so far for the init page gui is posted here.  When it's finished it will look much nicer, so ignore the purple boarders.
-Also, you can ignore the stuff at the bottom of the layout.xml (the countries and business type spinner), those were form playing around with the spinners and I'll eventually remove them.
-SO far this asks for class name, building name, days of week and I will soon add time, and I just remebered I need to add room number as well.
-The building names string that appears with the building spinner doesn't have all the building names in there yet, but ive added a bunch and I'll add more soon too (including the buildings on the center city campus).
+Updated my init page GUI..
+Changes that I still plan on doing:
+
+1. changing the coloring around a bit, im not happy with it as is
+2. adding the rest of the drexel buildings to the building array
