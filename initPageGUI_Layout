@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/nestbg" >
+    
+<RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp" >
 
 <!-- /**************** CLASS PROMPT *****************/ -->
+
+   <RelativeLayout
+       android:id="@+id/classLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:background="@drawable/boarders" 
+       android:layout_margin="10dp" >
+       
        <EditText
         android:id="@+id/classEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/classTextView"
         android:ems="10"
         android:maxLength="20"
         android:textSize="15sp"
         android:hint="@string/classnameHint"
+        android:background="@null"
         android:inputType="text"
         android:typeface="serif"
-        android:background="@drawable/boarders" 
         android:paddingLeft="110dp">
         <requestFocus />
     </EditText>
@@ -28,24 +43,31 @@
         android:id="@+id/classTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/classEditText"
-        android:layout_alignBottom="@+id/classEditText"
         android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:paddingLeft="10dp"
         android:text="@string/classPrompt"
         android:typeface="serif"
+        android:textColor="#000099"
         android:textSize="20sp" />
-    
+    </RelativeLayout>
 <!-- /**************** BUILDING PROMPT *****************/   -->
+   <RelativeLayout
+       android:id="@+id/buildingLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/classLayout"
+       android:background="@drawable/boarders" 
+       android:layout_margin="10dp" >
 
 	<Spinner 
 	    android:id="@+id/buildingSpinner"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentLeft="true"
-	    android:layout_below="@+id/classEditText"
-	    android:paddingLeft="110dp"
-	    android:background="@drawable/boarders" />  
+	    android:layout_centerVertical="true"
+	    android:background="@null"
+	    android:paddingLeft="110dp" />  
 
     
     <TextView
@@ -53,22 +75,75 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/buildingSpinner"
-        android:layout_alignBottom="@+id/buildingSpinner"
         android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:paddingLeft="10dp"
         android:text="@string/buildingPrompt"
         android:typeface="serif"
+        android:textColor="#000099"
         android:textSize="20sp" />
+    </RelativeLayout>
+    <!-- /******************* ROOM NUM PROMPT *********************/ -->
+   <RelativeLayout
+       android:id="@+id/roomNumLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/buildingLayout"
+       android:background="@drawable/boarders" 
+       android:layout_margin="10dp" >    
     
-<!--  /**************** DAY(S) OF WEEK PROMPT *****************/  -->      
+    <EditText
+        android:id="@+id/roomNumEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toRightOf="@+id/roomNumTextView"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:ems="10"
+        android:maxLength="20"
+        android:textSize="15sp"
+        android:hint="@string/roomNumHint"
+        android:inputType="text"
+        android:typeface="serif"
+        android:paddingLeft="110dp">
+        <requestFocus />
+    </EditText>
+    
+    <TextView
+        android:id="@+id/roomNumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/roomNumEditText"
+        android:layout_alignBottom="@+id/roomNumEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:text="@string/roomNumPrompt"
+        android:typeface="serif"
+        android:textColor="#000099"
+        android:textSize="20sp" />
+    </RelativeLayout>
+    
+<!--  /**************** DAY(S) OF WEEK PROMPT *****************/  -->  
+   <RelativeLayout
+       android:id="@+id/dayLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/roomNumLayout"
+       android:background="@drawable/boarders" 
+       android:layout_margin="10dp" >
+        
         <TextView
         	android:id="@+id/dayTextView"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
-        	android:layout_below="@+id/buildingSpinner"
+        	android:layout_alignParentLeft="true"
+        	android:layout_alignParentTop="true"
         	android:paddingLeft="10dp"
         	android:text="@string/dayPrompt1"
         	android:textSize="20sp"
+        	android:textColor="#000099"
         	android:typeface="serif" />
         
             
@@ -79,6 +154,7 @@
 				android:layout_below="@+id/dayTextView"
 				android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/monday"
+                android:textColor="#000099"
                 android:typeface="serif" />
 
             <CheckBox
@@ -88,6 +164,7 @@
                 android:layout_toRightOf="@+id/dayTextView"
                 android:layout_below="@+id/monCheckBox"
                 android:text="@string/tuesday"
+                android:textColor="#000099"
                 android:typeface="serif" />
 
             <CheckBox
@@ -97,6 +174,7 @@
                 android:layout_below="@+id/tuesCheckBox"
                 android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/wednesday"
+                android:textColor="#000099"
                 android:typeface="serif" />
 
             <CheckBox
@@ -106,6 +184,7 @@
                 android:layout_below="@+id/wedsCheckBox"
                 android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/thursday"
+                android:textColor="#000099"
                 android:typeface="serif" />
 
             <CheckBox
@@ -115,52 +194,103 @@
                 android:layout_below="@+id/thursCheckBox"
                 android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/friday" 
+                android:textColor="#000099"
                 android:typeface="serif"/>
             
-<!-- /**************** UNDER CONSTRUCTION *****************/  -->           
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:text="@string/select_country"
-        android:textColor="#fff"
-        android:textSize="20sp" />
+ </RelativeLayout> 
+            
+<!--    /***************** START TIME PROMPT ******************/    -->
+      
+      <RelativeLayout
+     	 android:id="@+id/startTimeLayout"
+       	 android:layout_width="match_parent"
+      	 android:layout_height="wrap_content"
+      	 android:layout_below="@id/dayLayout"
+      	 android:background="@drawable/boarders" 
+      	 android:layout_margin="10dp" >
+            
+            <TextView
+                android:id="@+id/startTextView"
+                android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentTop="true"
+				android:paddingLeft="10dp"
+				android:text="@string/startPrompt"
+				android:textSize="20sp"
+				android:textColor="#000099"
+				android:typeface="serif" />
+            
+            <TextView
+                android:id="@+id/startOutTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/startTextView"
+                android:layout_toRightOf="@id/startTextView"
+                android:paddingLeft="10dp"
+                android:textSize="20sp"
+                android:text=""
+                android:textColor="#000099"
+                android:typeface="serif" />
+            
+            <Button
+                android:id="@+id/chStartTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/startTextView"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:typeface="serif"
+                android:textColor="#000099"
+                android:text="@string/chStartTimePrompt" />
+    </RelativeLayout>
+<!-- 	/***************** END TIME PROMPT ********************/ -->
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/friCheckBox"
-        android:text="@string/business_type"
-        android:textColor="#fff"
-        android:textSize="20sp" />
+	<RelativeLayout
+     	 android:id="@+id/endTimeLayout"
+       	 android:layout_width="match_parent"
+      	 android:layout_height="wrap_content"
+      	 android:layout_below="@id/startTimeLayout"
+      	 android:background="@drawable/boarders" 
+      	 android:layout_margin="10dp" >
+
+			<TextView
+			    android:id="@+id/endTextView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentTop="true"
+			    android:layout_alignParentLeft="true"
+			    android:paddingLeft="10dp"
+			    android:text="@string/endPrompt"
+			    android:textSize="20sp"
+			    android:textColor="#000099"
+			    android:typeface="serif" />
+			<TextView 
+			    android:id="@+id/endOutTextView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignBottom="@id/endTextView"
+			    android:layout_toRightOf="@id/endTextView"
+			    android:paddingLeft="10dp"
+			    android:textSize="20sp"
+			    android:text=""
+			    android:textColor="#000099"
+			    android:typeface="serif" />
+			<Button 
+			    android:id="@+id/chEndTimeButton"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@id/endTextView"
+			    android:gravity="center_horizontal"
+			    android:layout_centerHorizontal="true"
+			    android:typeface="serif"
+			    android:textColor="#000099"
+			    android:text="@string/chEndTimePrompt" />
+			
+   </RelativeLayout>         
 
 
 
-    <Spinner
-        android:id="@+id/spBussinessType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:prompt="@string/business_prompt" />
-
-    <Spinner
-        android:id="@+id/spCountries"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/spBussinessType"
-        android:layout_alignParentLeft="true"
-        android:entries="@array/country_arrays"
-        android:prompt="@string/country_prompt" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/spCountries"
-        android:layout_alignParentLeft="true"
-        android:text="@string/spinner_demo"
-        android:textSize="20sp" />
 
 </RelativeLayout>
+</ScrollView>
