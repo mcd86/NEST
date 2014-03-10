@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/nestbackground" >
+    android:background="@drawable/nestbg" >
     
 <RelativeLayout 
     android:layout_width="match_parent"
@@ -288,7 +288,25 @@
 			    android:text="@string/chEndTimePrompt" />
 			
    </RelativeLayout>         
-
+	<Button
+	    android:id="@+id/addClassButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/endTimeLayout"
+	    android:layout_alignParentLeft="true"
+	    android:typeface="serif"
+	    android:textColor="#000099"
+	    android:text="@string/addClassPrompt" />
+	
+	<Button
+	    android:id="@+id/submitButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/endTimeLayout"
+	    android:layout_alignParentRight="true"
+	    android:typeface="serif"
+	    android:textColor="#000099"
+	    android:text="@string/submitPrompt" />
 
 
 
