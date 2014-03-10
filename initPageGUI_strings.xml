@@ -17,8 +17,7 @@
     <string name="buildingPrompt">Building: </string>
     <string-array name="buildingNames">
         <item>building name</item><item >University Crossings</item>
-        <item >Korman</item>
-        <item >Lebow</item>
+        <item >Korman Center School of Education</item>
         <item >Alumni Engineering Labs</item>
         <item >Armory (Buckley Courts)</item>
         <item >Bossone Research Enterprise Center</item>
@@ -27,15 +26,38 @@
         <item >Creese Student Center</item>
         <item >Curtis Hall</item>
         <item >Daskalakis Athletic Center</item>
+        <item >Design Arts Annex</item>
         <item >Disque Hall</item>
+        <item >Drexel Recreation Center</item>
+        <item >Dornsife Center for Neighborhood Partnerships</item>
         <item >Korman Center School of Education</item>
         <item >Law Building and Library</item>
         <item >LeBow Engineering Center</item>
         <item >Lebow College of Business</item>
+        <item >Language and Communication Center</item>
+        <item >Library Learning Terrace</item>
         <item >MacAlister Hall</item>
         <item >Marks Intercultural Center</item>
         <item >School of Public Health</item>
         <item >One Drexel Plaza</item>
+        <item >Hagerty Library</item>
+        <item >Mandell Theater</item>
+        <item >Marks Intercultural Center</item>
+        <item >Main Building</item>
+        <item >School of Public Health</item>
+        <item >Papadakis Integrated Sciences Building</item>
+        <item >Pearlstein Business Learning Center</item>
+        <item >Peck Problem Solving &amp; Research Center</item>
+        <item >PSA Building</item>
+        <item >Randell Hall</item>
+        <item >Rush Building College of Computing &amp; Informatics</item>
+        <item >Steinbright Career Development Center</item>
+        <item >Stratton Hall</item>
+        <item >URBN Center</item>
+        <item >URBN Center Annex</item>
+        <item >Vidas Athletic Complex</item>
+        <item >Drexel Smart House</item>
+        <item />
         
     </string-array>
     <string name="startPrompt">Start Time: </string>
@@ -44,7 +66,7 @@
     <string name="chEndTimePrompt">Change End Time</string>
     <string name="roomNumHint">room number</string>
     <string name="roomNumPrompt">Room: </string>
-
-</resources>
+    <string name="addClassPrompt">Add Another Class</string>
+    <string name="submitPrompt">Submit</string>
 
 </resources>
