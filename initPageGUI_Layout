@@ -48,7 +48,7 @@
         android:paddingLeft="10dp"
         android:text="@string/classPrompt"
         android:typeface="serif"
-        android:textColor="#000099"
+        android:textColor="#42311D"
         android:textSize="20sp" />
     </RelativeLayout>
 <!-- /**************** BUILDING PROMPT *****************/   -->
@@ -80,7 +80,7 @@
         android:paddingLeft="10dp"
         android:text="@string/buildingPrompt"
         android:typeface="serif"
-        android:textColor="#000099"
+        android:textColor="#42311D"
         android:textSize="20sp" />
     </RelativeLayout>
     <!-- /******************* ROOM NUM PROMPT *********************/ -->
@@ -121,7 +121,7 @@
         android:paddingLeft="10dp"
         android:text="@string/roomNumPrompt"
         android:typeface="serif"
-        android:textColor="#000099"
+        android:textColor="#42311D"
         android:textSize="20sp" />
     </RelativeLayout>
     
@@ -132,6 +132,8 @@
        android:layout_height="wrap_content"
        android:layout_below="@id/roomNumLayout"
        android:background="@drawable/boarders" 
+       android:paddingTop="10dp"
+       android:paddingBottom="10dp"
        android:layout_margin="10dp" >
         
         <TextView
@@ -143,7 +145,7 @@
         	android:paddingLeft="10dp"
         	android:text="@string/dayPrompt1"
         	android:textSize="20sp"
-        	android:textColor="#000099"
+        	android:textColor="#42311D"
         	android:typeface="serif" />
         
             
@@ -154,7 +156,7 @@
 				android:layout_below="@+id/dayTextView"
 				android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/monday"
-                android:textColor="#000099"
+                android:textColor="#42311D"
                 android:typeface="serif" />
 
             <CheckBox
@@ -164,7 +166,7 @@
                 android:layout_toRightOf="@+id/dayTextView"
                 android:layout_below="@+id/monCheckBox"
                 android:text="@string/tuesday"
-                android:textColor="#000099"
+                android:textColor="#42311D"
                 android:typeface="serif" />
 
             <CheckBox
@@ -174,7 +176,7 @@
                 android:layout_below="@+id/tuesCheckBox"
                 android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/wednesday"
-                android:textColor="#000099"
+                android:textColor="#42311D"
                 android:typeface="serif" />
 
             <CheckBox
@@ -184,7 +186,7 @@
                 android:layout_below="@+id/wedsCheckBox"
                 android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/thursday"
-                android:textColor="#000099"
+                android:textColor="#42311D"
                 android:typeface="serif" />
 
             <CheckBox
@@ -194,7 +196,7 @@
                 android:layout_below="@+id/thursCheckBox"
                 android:layout_toRightOf="@+id/dayTextView"
                 android:text="@string/friday" 
-                android:textColor="#000099"
+                android:textColor="#42311D"
                 android:typeface="serif"/>
             
  </RelativeLayout> 
@@ -206,7 +208,9 @@
        	 android:layout_width="match_parent"
       	 android:layout_height="wrap_content"
       	 android:layout_below="@id/dayLayout"
-      	 android:background="@drawable/boarders" 
+      	 android:background="@drawable/boarders"
+      	 android:paddingBottom="10dp" 
+      	 android:paddingTop="10dp"
       	 android:layout_margin="10dp" >
             
             <TextView
@@ -218,7 +222,7 @@
 				android:paddingLeft="10dp"
 				android:text="@string/startPrompt"
 				android:textSize="20sp"
-				android:textColor="#000099"
+				android:textColor="#42311D"
 				android:typeface="serif" />
             
             <TextView
@@ -230,7 +234,6 @@
                 android:paddingLeft="10dp"
                 android:textSize="20sp"
                 android:text=""
-                android:textColor="#000099"
                 android:typeface="serif" />
             
             <Button
@@ -241,7 +244,9 @@
                 android:gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
                 android:typeface="serif"
-                android:textColor="#000099"
+                android:textColor="#42311D"
+                android:background="@drawable/chtime_buttons"
+                style="@style/button_text"
                 android:text="@string/chStartTimePrompt" />
     </RelativeLayout>
 <!-- 	/***************** END TIME PROMPT ********************/ -->
@@ -252,6 +257,8 @@
       	 android:layout_height="wrap_content"
       	 android:layout_below="@id/startTimeLayout"
       	 android:background="@drawable/boarders" 
+      	 android:paddingBottom="10dp"
+      	 android:paddingTop="10dp"
       	 android:layout_margin="10dp" >
 
 			<TextView
@@ -263,7 +270,7 @@
 			    android:paddingLeft="10dp"
 			    android:text="@string/endPrompt"
 			    android:textSize="20sp"
-			    android:textColor="#000099"
+			    android:textColor="#42311D"
 			    android:typeface="serif" />
 			<TextView 
 			    android:id="@+id/endOutTextView"
@@ -274,7 +281,6 @@
 			    android:paddingLeft="10dp"
 			    android:textSize="20sp"
 			    android:text=""
-			    android:textColor="#000099"
 			    android:typeface="serif" />
 			<Button 
 			    android:id="@+id/chEndTimeButton"
@@ -284,7 +290,9 @@
 			    android:gravity="center_horizontal"
 			    android:layout_centerHorizontal="true"
 			    android:typeface="serif"
-			    android:textColor="#000099"
+			    android:textColor="#42311D"
+                android:background="@drawable/chtime_buttons"
+                style="@style/button_text"
 			    android:text="@string/chEndTimePrompt" />
 			
    </RelativeLayout>         
@@ -295,7 +303,7 @@
 	    android:layout_below="@id/endTimeLayout"
 	    android:layout_alignParentLeft="true"
 	    android:typeface="serif"
-	    android:textColor="#000099"
+	    android:textColor="#42311D"
 	    android:text="@string/addClassPrompt" />
 	
 	<Button
@@ -305,7 +313,7 @@
 	    android:layout_below="@id/endTimeLayout"
 	    android:layout_alignParentRight="true"
 	    android:typeface="serif"
-	    android:textColor="#000099"
+	    android:textColor="#42311D"
 	    android:text="@string/submitPrompt" />
 
 
