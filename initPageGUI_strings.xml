@@ -68,5 +68,8 @@
     <string name="roomNumPrompt">Room: </string>
     <string name="addClassPrompt">Add Another Class</string>
     <string name="submitPrompt">Submit</string>
+    <string name="image_content">image</string>
+    <string name="okButton">Ok</string>
+    
 
 </resources>
