@@ -4,12 +4,16 @@ package com.example.toastlistviewexample4;
 import java.util.Calendar;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
-import android.view.View.OnClickListener;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -50,8 +54,8 @@ public class MainActivity extends Activity {
        tvStartOut = (TextView) findViewById(R.id.startOutTextView);
        tvEndOut = (TextView) findViewById(R.id.endOutTextView);
        
-        adptBuildingName = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, buildingNames);
-        spBuildingName.setAdapter(adptBuildingName);
+       adptBuildingName = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, buildingNames);
+       spBuildingName.setAdapter(adptBuildingName);
         
         
         // Building Name Item selected Listener        
@@ -59,10 +63,7 @@ public class MainActivity extends Activity {
         	@Override
         	public void onItemSelected(AdapterView<?> adapter, View v, int pos, long id){
         		//On selecting a spinner item...
-        		String item = adapter.getItemAtPosition(pos).toString();
-        		
-        		//Showing selected spinner item...
-        		Toast.makeText(getApplicationContext(), "Selected Building: " + item, Toast.LENGTH_LONG).show();	
+        		String item = adapter.getItemAtPosition(pos).toString();	
         	}
         	@Override
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -85,6 +86,24 @@ public class MainActivity extends Activity {
         // Add button click listener
         addStartButtonClickListener();
         addEndButtonClickListener();
+        
+        
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.init_toast);
+        dialog.setTitle("Hello!");
+        
+        TextView tv = (TextView) dialog.findViewById(R.id.initAlertTextView);
+        tv.setText("Before you start using NEST, please take a few short minutes to set up your class schedule.");
+        
+        Button btnInit = (Button) dialog.findViewById(R.id.initAlertButton);
+        btnInit.setOnClickListener(new OnClickListener(){
+        	@Override
+        	public void onClick(View v){
+        		dialog.dismiss();
+        	}
+        });
+        
+        dialog.show();
     }
     
     public void addStartButtonClickListener(){
