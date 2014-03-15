@@ -1,5 +1,6 @@
 package com.android.nest;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -42,8 +43,14 @@ public class ScheduleActivity extends Activity
 			        	    Iterator<Event> it = eventList.iterator();
 			        	    while(it.hasNext())
 			        	    {
-			        	        CollegeClass obj = (CollegeClass) it.next();
-			        	        
+			        	        CollegeClass collegeClass = (CollegeClass) it.next();
+			        	        String className = collegeClass.getName();
+			        	        String buildingName = collegeClass.getBuildingName();
+			        	        String roomNumber = collegeClass.getRoomNumber();
+			        	        String day = key;
+			        	        Time startTime = collegeClass.getStartTime();
+			        	        Time endTime = collegeClass.getEndTime();
+			        	        System.out.println("startTime: " + startTime);
 			        	        //Do something with obj
 			        	    }
 			        	    // ...
