@@ -13,6 +13,7 @@ import com.cloudmine.api.rest.response.CMObjectResponse;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class ScheduleActivity extends Activity 
 {
@@ -36,6 +37,7 @@ public class ScheduleActivity extends Activity
 			        {
 			           MyObject tempObject = (MyObject) object;
 			           HashMap<String,ArrayList<Event>> eventMap = tempObject.getSchedule();
+			           System.out.println(eventMap);
 			           for (HashMap.Entry<String, ArrayList<Event>> entry : eventMap.entrySet()) 
 			           {
 			        	    String key = entry.getKey();
@@ -43,7 +45,9 @@ public class ScheduleActivity extends Activity
 			        	    Iterator<Event> it = eventList.iterator();
 			        	    while(it.hasNext())
 			        	    {
-			        	        CollegeClass collegeClass = (CollegeClass) it.next();
+			        	        System.out.println("inside map iterator");
+			        	    	CollegeClass collegeClass = (CollegeClass) it.next();
+			        	        System.out.println(collegeClass);
 			        	        String className = collegeClass.getName();
 			        	        String buildingName = collegeClass.getBuildingName();
 			        	        String roomNumber = collegeClass.getRoomNumber();
@@ -51,6 +55,11 @@ public class ScheduleActivity extends Activity
 			        	        Time startTime = collegeClass.getStartTime();
 			        	        Time endTime = collegeClass.getEndTime();
 			        	        System.out.println("startTime: " + startTime);
+			        	        Log.i("TEST", startTime.toString());
+			        	        if (startTime != null)
+			        	        	Log.i("TEST", startTime.toString());
+			        	        	else
+			        	        	Log.i("FAIL", "null");
 			        	        //Do something with obj
 			        	    }
 			        	    // ...
