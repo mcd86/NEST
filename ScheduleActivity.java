@@ -2,6 +2,7 @@ package com.android.nest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import com.cloudmine.api.CMApiCredentials;
 import com.cloudmine.api.CMObject;
@@ -34,7 +35,19 @@ public class ScheduleActivity extends Activity
 			        {
 			           MyObject tempObject = (MyObject) object;
 			           HashMap<String,ArrayList<Event>> eventMap = tempObject.getSchedule();
-			           
+			           for (HashMap.Entry<String, ArrayList<Event>> entry : eventMap.entrySet()) 
+			           {
+			        	    String key = entry.getKey();
+			        	    ArrayList<Event> eventList = entry.getValue();
+			        	    Iterator<Event> it = eventList.iterator();
+			        	    while(it.hasNext())
+			        	    {
+			        	        CollegeClass obj = (CollegeClass) it.next();
+			        	        
+			        	        //Do something with obj
+			        	    }
+			        	    // ...
+			        	}
 			        }
 			    }
 			});
