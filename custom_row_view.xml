@@ -5,15 +5,28 @@
     android:background="@drawable/boarders"
     android:orientation="vertical"
     android:padding="7dp" >
-
+			
+    
+    		<TextView
+    		    android:id="@+id/dayTV"
+    		    android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:text="Monday" />
+                
             <TextView
                 android:id="@+id/classNameTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/dayTV"
                 android:text="CS 275"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:typeface="serif" />
+            
 
             <TextView
                 android:id="@+id/classTimeTV"
@@ -47,4 +60,4 @@
                 android:textStyle="bold"
                 android:typeface="serif" />
 
-</RelativeLayout></RelativeLayout>
+</RelativeLayout>
